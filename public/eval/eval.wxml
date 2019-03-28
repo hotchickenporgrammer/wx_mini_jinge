@@ -1,0 +1,21 @@
+<view class='container'>
+  <view class='desc'>
+    <image src='/detail/img/dot.png'></image>
+    <view class='info'>
+      <view class='call'>
+        <text class='name'>杜文杰</text>
+        <text class='localtion'>副主任医师</text>
+      </view>
+      <view class='hospital'>广州中医药大学第一附属医院</view>
+    </view>
+  </view>
+  <textarea placeholder='请写入您对本次服务的评分~' placeholder-class="pla"></textarea>
+  <view class='service'>
+    <text class='sve_eval'>服务评分</text>
+    <van-rate custom-class="van-width" color="rgba(249,168,73,1)" 
+     size="{{ 15 }}" value="{{ value }}" bind:change="onChange" />
+  </view>
+  <view class='btn_bottom'>
+      <button class='btn'>提交评论</button>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "dot_itemAsk": "/component/dot_item_ask/dot_item_ask",
+    "toask": "/component/toask/toask"
+  },
+  "navigationBarTitleText": "咨询详情"
+}

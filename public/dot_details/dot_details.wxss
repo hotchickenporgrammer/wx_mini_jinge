@@ -1,0 +1,147 @@
+/**index.wxss**/
+page{
+  background: #fff;
+}
+.container{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  height: 180rpx;
+  width: 100%;
+}
+.fui-left{
+  float: left;
+}
+.fui-right{
+  float: right;
+}
+
+.left{
+  height: 100%;
+  width: 180rpx;
+}
+.left image{
+  height: 100%;
+  width: 180rpx
+}
+.right{
+  width: 510rpx;
+  height: 100%;
+}
+
+.dot_desc{
+  border-bottom: 20rpx solid rgba(245,245,245,1);
+  width: 100%;
+  padding: 30rpx 0; 
+
+}
+.content{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  width: 100%;
+}
+.fos_dtr .fos_name{
+  display: inline-block;
+  font-size:36rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(15,27,67,1);
+  font-weight: bold;
+  line-height:11rpx;
+  padding-bottom: 30rpx;
+}
+.fos_dtr .fos_name::before{
+  content: '';
+  display: inline-block;  
+  width:8rpx;
+  height:25rpx;
+  background:rgba(15,27,67,1);
+  border-radius:4rpx;
+  margin-right: 20rpx;
+}
+.text_desc{
+  word-break: break-all;
+  padding: 5rpx;
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(153,153,153,1);
+}
+.user{
+  display: flex;
+  align-items: center;
+  padding: 23rpx 0 15rpx 0;
+}
+
+.user .van-rate{
+  margin-left: auto;
+}
+.user image{
+  height: 44rpx;
+  width: 44rpx;
+  border-radius:50%;
+}
+.user .username{
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 10rpx;
+}
+.text_content{
+  font-size:30rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.msg{
+   padding:10rpx 0 18rpx 0;
+
+}
+.user_item,.user_item_two{
+  border-bottom: 1rpx solid #eee;
+
+}
+.user_item:nth-child(3),
+.user_item_two:nth-child(3){
+  border-bottom: none;
+
+}
+
+.msg text{
+font-size:24rpx;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.msg .time{
+  padding: 72rpx;
+}
+.more{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx 0 10rpx 0;
+  /* margin-bottom: 120rpx; */
+  /* padding: 15rpx 0; */
+}
+.more text{
+  font-size:26rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(153,153,153,1);
+  vertical-align: middle;
+
+}
+.more image{
+  height: 26rpx;
+  width: 26rpx;
+  vertical-align: middle;
+}
+.mt{
+  margin-bottom: 100rpx;
+}
+checkbox .wx-checkbox-input {
+  width: 28rpx;
+  height: 28rpx;
+}

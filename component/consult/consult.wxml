@@ -1,0 +1,7 @@
+<!--component/consult/consult.wxml-->
+
+<view class='list_item local_class' wx:for="{{dot_text}}" wx:for-item="c" data-goodsid="{{c.id}}" bindtap="toTextDetail">
+  <view class='article_title'>{{c.text_title}}</view>
+  <text class='art_time'>{{c.text_time}}</text>
+  <text class='look_num'>浏览▪{{c.text_num}}</text>
+</view>

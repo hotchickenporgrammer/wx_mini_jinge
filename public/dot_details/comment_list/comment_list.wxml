@@ -1,0 +1,27 @@
+<!--public/dot_details/comment_list/comment_list.wxml-->
+<view class='content'>
+    <view class='fos_dtr'>
+      <text class='fos_name'>患者评论</text>
+    </view>
+
+    <block wx:for="{{record}}" wx:for-item="k">
+    <view class='list_item'>
+      <view class='user'>
+        <image src='/detail/icon/yonghu.png'></image>
+        <text class='username'>{{k.username}}</text>
+        <view class='van-rate'>
+          <van-rate custom-class="van-width" color="rgba(249,168,73,1)" readonly size="{{ 10 }}" value="{{ k.value }}" bind:change="onChange" />
+        </view>
+      </view>
+      <view class='user_text'>
+        <text class='text_content'>{{k.comment}}</text>
+      </view>
+      <view class='msg'>
+        <text class='dmy'>{{k.dmy}}</text>
+        <text class='time'>{{k.time}}</text>
+        <text class='look_num'>浏览：{{k.look_num}}</text>
+      </view>
+       </view>
+    </block>
+    </view>
+   

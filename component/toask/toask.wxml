@@ -1,0 +1,26 @@
+<!--component/toask/toask.wxml-->
+
+<view class='toAsk'>
+  <button class='btn' bindtap="ispopup">向医生提问</button>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" custom-style="height:950rpx; width: 673rpx; border-radius: 20px; overflow: hidden;">
+  <view class='agr'>
+    <view class='agr_title'>
+      咨询说明及相关协议条款
+    </view> 
+    <view class='content_scroll'>
+    <view class='scroll'>
+      <text class='agr_content'>{{agr_content}}</text>  
+      <view class='yorn'>
+        <checkbox checked='{{ischeck}}' bindtap='onischeck'>您已阅读并同意</checkbox>
+        <navigator url="/component/toask/terms/terms" class="read" bindtap='toTerms'>咨询说明及相关协议条款
+        </navigator>
+      </view>
+      <view class='btn_group'>
+        <button class="no" bindtap='noShow'>取消</button>
+        <button class='yes' disabled='{{!ischeck}}' bindtap='topay'>确认</button>
+      </view>
+    </view> 
+    </view>
+  </view>
+</van-popup>

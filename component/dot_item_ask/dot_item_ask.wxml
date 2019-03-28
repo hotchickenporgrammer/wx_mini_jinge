@@ -1,0 +1,28 @@
+<!--component/dot_item_ask/dot_item_ask.wxml-->
+<view class='list_item'>
+  <view class='container'>
+    <view class='left fui-left'>
+      <image mode='aspectFill' src='{{dot_info.img_src}}'></image>
+    </view>
+    <view class='right fui-right'>
+      <view class='dot_info fui-left'>
+        <view class='desc'>
+          <text class='dot_name'>{{dot_info.dot_name}}</text>
+          <text class='dot_top'>{{dot_info.dot_top}}</text>
+        </view>
+        <view class='score'>
+          <text class='dot-num'>{{dot_info.value}}</text>
+          <van-rate custom-class="van-width" color="rgba(249,168,73,1)" readonly size="{{ 10 }}" value="{{ dot_info.value }}" bind:change="onChange" />
+          <text class="consulted">咨询人数：{{dot_info.num}}</text>
+        </view>
+        <view class="hospital">
+          {{dot_info.hos_name}}
+        </view>
+      </view>
+      <view class='info_opt fui-right'>
+        <text wx:if="{{dot_info.money==0}}">免费</text>
+        <text wx:else>￥{{dot_info.money}}/次</text>
+      </view>
+    </view>
+  </view>
+</view>

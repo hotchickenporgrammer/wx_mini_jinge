@@ -1,0 +1,30 @@
+<!--component/dot_item/dot_item.wxml-->
+
+<view class='list_item'  wx:for="{{dot_item}}" wx:for-item="a"  wx:key="id" data-goodsid="{{a.dot_id}}" bindtap="toDetails">
+  <view class='left fui-left'>
+    <image mode='aspectFill' src='{{a.img_src}}'></image>
+  </view>
+  <view class='right fui-right'>
+    <view class='dot_info fui-left'>
+      <view class='desc'>
+        <text class='dot_name'>{{a.dot_name}}</text>
+        <text class='dot_top'>{{a.dot_top}}</text>
+      </view>
+      <view class='score'>
+        <text class='dot-num'>{{a.value}}</text>
+        <van-rate custom-class="van-width" color="rgba(249,168,73,1)" readonly size="{{ 10 }}" value="{{ a.value }}" bind:change="onChange" />
+        <text class="consulted">咨询人数：{{a.num}}</text>
+      </view>
+      <view class="hospital">
+        {{a.hos_name}}
+      </view>
+      <view class='itd'>简介：{{a.ito}}</view>
+    </view>
+    <view class='info_opt fui-right'>
+        <text wx:if="{{a.money==0}}">免费</text>
+        <text wx:else>￥{{a.money}}/次</text>
+      <view class='zixun'>咨询</view>
+      <image mode='scaleToFill' src='/detail/icon/sandian.png'></image>
+    </view>
+  </view>
+</view>

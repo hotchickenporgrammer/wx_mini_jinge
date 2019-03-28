@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "search": "/component/search/search",
+    "van-rate": "/dist/rate/index",
+    "listItem":"/component/dot_item/dot_item",
+    "dot_text":"/component/consult/consult",
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-popup": "/dist/popup/index"
+  }
+}

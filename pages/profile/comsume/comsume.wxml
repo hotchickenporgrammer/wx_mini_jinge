@@ -1,0 +1,21 @@
+<!--pages/profile/comsume/comsume.wxml-->
+<view class='container'>
+  <block wx:for="{{comsume}}" wx:for-item="i">
+    <view class='list_item'>
+      <image src='{{i.thumbs}}'></image>
+      <view class='cum_info'>
+        <view class='left'>
+          <text class='dot_name'>付款—{{i.dot_name}}</text>
+          <view class='cost'>咨询费用</view>
+          <view class='time_info'>
+            <text>{{i.date}}</text>
+            <text class='time'>{{i.time}}</text>
+          </view>
+        </view>
+        <view class='right'>
+          -{{i.money}}
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

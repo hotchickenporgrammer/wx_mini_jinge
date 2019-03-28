@@ -1,0 +1,34 @@
+/* pages/profile/myorder/order_detail/order_detail.wxss */
+.container{
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.createTime,
+.orderNum{
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.num{
+  width: 75%;
+  text-align: left;
+  font-size:26rpx;
+  font-family:MicrosoftYaHei;
+  color: #666;
+}
+.orderNum text:first-child,
+.createTime text:first-child{
+  font-size:26rpx;
+  font-family:MicrosoftYaHei;
+  color: #999;
+}
+.time{
+  padding-left: 30rpx;
+}
+.pla{
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(204,204,204,1);
+}

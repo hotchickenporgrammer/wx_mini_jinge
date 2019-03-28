@@ -1,0 +1,79 @@
+.container{
+  box-sizing: border-box;
+  padding: 40rpx 20rpx 10rpx 20rpx;
+}
+.desc{
+  display: flex;
+}
+.desc image{
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 50%;
+  margin-top: 15rpx;
+}
+.info{
+  padding-left: 20rpx;
+  font-size:30rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(51,51,51,1);
+}
+.localtion{
+  margin-left: 20rpx;
+  font-size:20rpx;
+  background:rgba(161,182,199,1);
+  border-radius:17rpx;
+  padding: 6rpx 14rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(255,255,255,1);
+}
+.hospital{
+  margin-top: 20rpx;
+  padding: 4rpx 14rpx;
+  font-size:22rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(161,182,199,1);
+  border:1px solid rgba(161,182,199,1);
+  border-radius:19rpx;
+}
+textarea{
+  margin-top: 27rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 27rpx;
+  font-size: 30rpx;
+  color: #555;
+}
+.pla{
+  font-size:26rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(221,221,221,1);
+}
+.service{
+  display: flex;
+  align-items: center;
+}
+.sve_eval{
+  font-size:30rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(153,153,153,1);
+  padding-right: 15rpx;
+}
+.btn_bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 20rpx 10rpx 20rpx;
+  height: 108rpx;
+  width: 100%;
+}
+.btn{
+  background:rgba(16,27,68,1);
+  box-shadow:0px 2rpx 10rpx 0rpx rgba(238,238,238,1);
+  border-radius:10px;
+  color: #fff;
+  font-size: 30rpx;
+  height: 100%;
+  width: 100%;
+  line-height: 98rpx;
+}

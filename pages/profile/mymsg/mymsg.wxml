@@ -1,0 +1,16 @@
+<!--pages/profile/mymsg/mymsg.wxml-->
+<view class='container'>
+  <view class='desc' wx:for="{{msg}}" wx:key bindtap='jump' data-id="{{item.orderid}}"> 
+    <image src='{{item.avatar}}'></image>
+    <view class='info'>
+      <view class='info_top'>
+        <text class='name'>{{item.name}}</text>
+        <text class='time'>{{item.date}}</text>
+      </view>
+      <view class='info_bottom'>
+        <view class='info_content'>{{item.content}}</view>
+        <view class='msg_num' wx:if='{{item.msg_num=="0"?!1:!0}}'>{{item.msg_num}}</view>
+      </view>
+    </view>
+  </view>
+</view>

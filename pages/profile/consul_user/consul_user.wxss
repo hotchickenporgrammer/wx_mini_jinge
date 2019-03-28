@@ -1,0 +1,6 @@
+/* pages/profile/consul_user/consul_user.wxss */
+.container{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}

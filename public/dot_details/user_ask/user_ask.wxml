@@ -1,0 +1,32 @@
+<!--public/dot_details/user_ask/user_ask.wxml-->
+<view class='page_con'>
+<dot_itemAsk dot_info="{{dot_info}}" />
+<view class='content'>
+  <view class='user'>
+    <image src='/detail/icon/yonghu.png'></image>
+    <text class='username'>{{record.user.username}}的提问</text>
+  </view>
+  <view class='user_text'>
+    <text class='text_content'>{{record.user.comment}}</text>
+  </view>
+  <view class='msg'>
+    <text class='dmy'>{{record.user.dmy}}</text>
+    <text class='time'>{{record.user.time}}</text>
+  </view>
+</view>
+<view class='content'>
+  <view class='user'>
+    <image src='{{dot_info.img_src}}'></image>
+    <text class='username'>{{dot_info.dot_name}}医生回答了该问题</text>
+  </view>
+  <view class='user_text'>
+    <text class='text_content'>{{record.doctor.comment}}</text>
+  </view>
+  <view class='msg'>
+    <text class='dmy'>{{record.doctor.dmy}}</text>
+    <text class='time'>{{record.doctor.time}}</text>
+  </view>
+</view>
+</view>
+<toask />
+

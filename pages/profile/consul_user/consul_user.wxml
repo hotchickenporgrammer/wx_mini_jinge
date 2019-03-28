@@ -1,0 +1,4 @@
+<!--pages/profile/consul_user/consul_user.wxml-->
+<view class='container'>
+<dot_item dot_item="{{dot_info}}"/>
+</view>

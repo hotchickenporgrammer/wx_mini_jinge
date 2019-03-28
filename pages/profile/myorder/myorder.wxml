@@ -1,0 +1,12 @@
+<!--pages/profile/myorder/myorder.wxml-->
+<view class='container'>
+  <view class='nav'>
+    <view wx:for="{{nav}}" wx:for-item="i" wx:key class="nav_item {{currentab==index?'on':''}}" bindtap='isshow' data-index="{{index}}">
+      {{i.title}}
+    </view> 
+  </view>
+  <view wx:for="{{nav}}" wx:key wx:for-item="j" class='noshow {{currentab==index?"show":""}}'>
+  <order_item service_content="{{j.service_content}}">
+  </order_item> 
+  </view>
+</view>

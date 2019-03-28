@@ -1,0 +1,20 @@
+<!--pages/index/doctorList/doctorList.wxml-->
+<view>
+  <search keyword='{{keyword}}'/>
+  <view class='select'>
+    <view class='nav'>
+      <view class="selectItems {{currentTab==index?'on':''}}" bindtap='selected_tap' wx:for="{{select}}" wx:key data-index='{{index}}' data-current='{{index}}'>
+        {{item.itemname}}
+        <image mode='aspectFill' src='/detail/icon/down.png'></image>
+      </view>
+    </view>
+    <view class="selectbox {{currentTab==index?'':'noshow'}}" wx:for="{{select}}" wx:key wx:for-item="a" wx:if="{{isshow}}" data-index='{{index}}'>
+      <view wx:for="{{a.select_item}}" wx:for-item="b" class='item' bindtap='tabName' data-value="{{b.value}}" data-type="{{b.type}}">
+        <view>{{b.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='show'>
+    <listItem dot_item="{{dot_info}}" bindtap='toDetails' />
+  </view>
+</view>

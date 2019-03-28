@@ -1,0 +1,42 @@
+/* pages/profile/myorder/myorder.wxss */
+page{
+    font-family:MicrosoftYaHei;
+}
+.nav{
+  width: 100%;
+  display: flex;
+}
+.nav_item{
+  color: #999;
+  font-size: 30rpx;
+  flex:1;
+  text-align: center;
+  padding: 26rpx 0;
+
+}
+.on{
+    position: relative;
+  /* color:rgba(15,27,67,1);
+  border-bottom: 6rpx solid rgba(15,27,67,1); */
+}
+.on:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 6rpx;
+    width: 100rpx;
+    background: rgba(15,27,67,1);
+    transform: translateX(-50%);
+}
+.noshow{
+  display: none;
+}
+.show{
+  display: block;
+}
+.pla{
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(204,204,204,1);
+}

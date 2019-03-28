@@ -1,0 +1,19 @@
+/* public/search_hot/search_hot.wxss */
+/* pages/hot/hot.wxss */
+
+/**index.wxss**/
+.fui-left{
+  float: left;
+}
+.fui-right{
+  float: right;
+}
+.show{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.selected{
+  color: #0F1B43 !important;
+  border-bottom: 6rpx solid #0F1B43;
+}

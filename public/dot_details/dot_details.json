@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-rate": "/dist/rate/index",
+    "dot_itemAsk": "/component/dot_item_ask/dot_item_ask",
+    "toask": "/component/toask/toask"
+  },
+  "navigationBarTitleText": "医生详情"
+}

@@ -1,0 +1,7 @@
+<!--component/search/search.wxml-->
+<view class='search_top' bindtap='tosearch_page'>
+  <view class='search'>
+    <image src='/detail/icon/sousuo.png' mode='scaleToFill'></image>
+    <text class='pla'>{{keyword || "请输入医生姓名或者关键词搜索"}}</text>
+  </view>
+</view>

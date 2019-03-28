@@ -1,0 +1,132 @@
+/* public/dot_details/user_ask/user_ask.wxss */
+page{
+  background: #fff;
+}
+.container{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  height: 180rpx;
+  width: 100%;
+}
+.fui-left{
+  float: left;
+}
+.fui-right{
+  float: right;
+}
+.list_item{
+  height: 180rpx;
+  padding: 40rpx 0;
+  border-bottom: 20rpx solid rgba(245,245,245,1);
+}
+.left{
+  height: 100%;
+  width: 180rpx;
+}
+.left image{
+  height: 100%;
+  width: 180rpx
+}
+.right{
+  width: 510rpx;
+  height: 100%;
+}
+.dot_info{
+  width: 384rpx;
+  height: 100%;
+}
+.dot_info .desc{
+  height:30rpx;
+  font-family:MicrosoftYaHei;
+  display: flex;
+  align-items: center;
+}
+.dot_info .desc .dot_name{
+  font-size: 30rpx;
+}
+.dot_info .desc .dot_top{
+  /* line-height: 11rpx; */
+  color: #fff;
+  margin-left: 30rpx;
+  font-size: 20rpx;
+  display: inline-block;
+  padding: 5rpx 15rpx; 
+  background:rgba(161,182,199,1);
+  border-radius:17px;
+
+}
+.dot_info .score {
+  display: flex;
+  align-items:center;
+  padding: 20rpx 0;
+}
+.dot_info .score .dot-num{
+  font-size: 26rpx;
+  /* margin-right: 30rpx;
+  line-height: 30rpx; */
+}
+.dot_info .score .van-width{
+  display: inline-block !important;
+  width: 170rpx !important;
+  padding: 0 10rpx 0 5rpx;
+}
+.dot_info .hospital{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size:22rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(161,182,199,1);
+  text-align: center;
+  padding: 5rpx 0;
+  border:1px solid rgba(161,182,199,1);
+  border-radius:19rpx;
+  }
+ .dot_info .consulted{
+    font-size:22rpx;
+    color:rgba(153,153,153,1);
+ }
+ .dot_info .itd{
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 13rpx;
+    font-size:22rpx;
+    font-family:MicrosoftYaHei;
+    color:rgba(153,153,153,1);
+ }
+.info_opt{
+  width: 100rpx;
+  height: 100%;
+  position: relative;
+}
+.info_opt text{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size:26rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:bold;
+  color:rgba(209,48,48,1);
+}
+.info_opt navigator{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 10rpx 28rpx;
+  color: #fff;
+  background:rgba(15,27,67,1);
+  border-radius:25px;
+  box-sizing: border-box;
+}
+.info_opt image{
+  height: 30rpx;
+  width: 60rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,91 @@
+/* component/toask/toask.wxss */
+
+.toAsk {
+  position: fixed;
+  width: 100%;
+  height: 120rpx;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  background: #fff;
+}
+
+.toAsk .btn {
+  
+  height: 100%;
+  width: 100%;
+  background: #101b44;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+
+.agr {
+  height: 100%;
+  padding: 49rpx;
+}
+
+.agr_title {
+  background: #fff;
+  z-index: 999;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+  font-family: MicrosoftYaHei;
+  color: rgba(15, 27, 67, 1);
+  padding-bottom: 70rpx;
+}
+.content_scroll{
+  height: 800rpx;
+  overflow: auto;
+
+}
+.scroll{
+  overflow: scroll;
+}
+.agr_content {
+  word-break: break-all;
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
+  color: rgba(153, 153, 153, 1);
+
+}
+.yorn{
+  height:29rpx;
+  font-size:28rpx;
+  color:rgba(153,153,153,1);
+  padding:40rpx 0;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.read{
+  font-size: 30rpx;
+  color:#0F1B43;
+}
+.btn_group{
+  padding-bottom: 40rpx;
+}
+.btn_group .no,
+.btn_group .yes{
+  display: inline-block;
+  height: 71rpx;
+  width: 242rpx;
+  border-radius:8px;
+  line-height: 71rpx;
+  font-size: 24rpx;
+}
+.btn_group .no{
+  border:1px solid #ddd;
+}
+.btn_group .yes{
+  color: #fff;
+  float: right;
+  background:rgba(15,27,67,1);
+}

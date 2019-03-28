@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/doctorList/doctorList",
+    "public/dot_details/dot_details",
+    "component/consult/consult",
+    "pages/hot/hot",
+    "public/text_details/text_details",
+    "public/dot_details/user_ask/user_ask",
+    "pages/profile/profile",
+    "public/dot_details/consult_list/consult_list",
+    "public/dot_details/comment_list/comment_list",
+    "pages/profile/consul_user/consul_user",
+    "pages/profile/comsume/comsume",
+    "pages/profile/myorder/myorder",
+    "component/order_item/order_item",
+    "pages/profile/myorder/order_detail/order_detail",
+    "public/eval/eval",
+    "pages/profile/mymsg/mymsg",
+    "public/chat/chat",
+    "public/search_page/search_page",
+    "public/search_hot/search_hot"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0F1B45",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white"
+  }
+}

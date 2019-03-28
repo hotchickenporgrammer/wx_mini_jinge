@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "search": "/component/search/search",
+    "dot_text": "/component/consult/consult",
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index"
+  },
+  "navigationBarTitleText": "咨询结果"
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dot_item":"/component/dot_item/dot_item"
+  },
+  "navigationBarTitleText": "咨询记录"
+}

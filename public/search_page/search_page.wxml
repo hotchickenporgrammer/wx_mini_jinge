@@ -1,0 +1,12 @@
+<!--public/search_page/search_page.wxml-->
+<view class='container'>
+  <view class='search'>
+    <view class='select' catchtap='isshow'>{{showname}}
+      <view class='select_nav' wx:if="{{show}}" wx:for="{{nav_item}}" wx:for-item="n">
+        <view class='item_nav' catchtap='tabname'>{{n.select}}</view>
+      </view>
+    </view>
+    <input type='search' placeholder='请输入' class='search_input' bindinput='inputeidt'></input>
+    <button class='btn' bindtap='toresults'>搜索</button>
+  </view>
+</view>

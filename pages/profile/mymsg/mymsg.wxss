@@ -1,0 +1,65 @@
+/* pages/profile/mymsg/mymsg.wxss */
+.container{
+  box-sizing: border-box;
+  padding: 40rpx 20rpx;
+}
+.desc{
+  display: flex;
+  width: 100%;
+  padding-bottom: 80rpx;
+}
+.desc image{
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 50px;
+  margin-top: 20rpx;
+}
+.desc .info{
+  width: 100%;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.info_top{
+  display: flex;
+  width: 100%;
+}
+.name{
+  font-size:34rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(0,0,0,1);
+}
+.time{
+  font-size:24rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(204,204,204,1);
+  margin-left: auto;
+}
+.info_bottom{
+  display: flex;
+  width: 100%;
+  /* justify-content: space-between; */
+}
+.info_content{
+  padding-top: 10rpx;
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(153,153,153,1);
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.msg_num{
+  margin-left: auto;
+  /* width: 40rpx;
+  height: 26rpx; */
+  width:40rpx;
+  height:26rpx;
+  background:rgba(209,48,48,1);
+  border-radius:13rpx;
+  color: #fff;
+  font-size: 18rpx;
+  text-align: center;
+  transform: translateY(50%);
+}

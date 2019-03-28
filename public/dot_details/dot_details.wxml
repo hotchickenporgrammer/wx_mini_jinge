@@ -1,0 +1,81 @@
+<!--public/dot_details/dot_details.wxml-->
+<dot_itemAsk dot_info="{{dot_info}}"/>
+<view class='dot_desc'>
+  <view class='content'>
+    <view class='fos_dtr'>
+      <text class='fos_name'>医生简介</text>
+    </view>
+    <text class='text_desc'>{{dot_info.ito}}</text>
+  </view>
+</view>
+<view class='dot_desc'>
+  <view class='content'>
+    <view class='fos_dtr'>
+      <text class='fos_name'>医生履历</text>
+    </view>
+    <text class='text_desc'>{{dot_info.experience}}</text>
+  </view>
+</view>
+<view class='dot_desc'>
+  <view class='content'>
+    <view class='fos_dtr'>
+      <text class='fos_name'>咨询记录</text>
+    </view>
+    <block wx:for="{{consultation}}" wx:for-item="j">
+    <view class='user_item'>
+      <view bindtap='toAskDetail' data-id="{{j.id}}">
+        <view class='user'>
+          <image src='/detail/icon/yonghu.png'></image>
+          <text class='username'>{{j.username}}</text>
+        </view>
+        <view class='user_text'>
+          <text class='text_content'>{{j.comment}}</text>
+        </view>
+        <view class='msg'>
+          <text class='dmy'>{{j.dmy}}</text>
+          <text class='time'>{{j.time}}</text>
+          <text class='look_num'>浏览：{{j.look_num}}</text>
+        </view>
+      </view>
+      </view>
+    </block>
+    <view class='more'>
+      <text wx:if="{{consultation.length == 2}}"  bindtap='toConsultList'>查看更多</text>
+      <text wx:elif="{{consultation.length == 0}}">暂无记录</text>
+      <image src='/detail/icon/xiangyou.png' wx:if="{{consultation.length ==2}}"></image>
+    </view>
+  </view>
+</view>
+<view class='dot_desc'>
+  <view class='content'>
+    <view class='fos_dtr'>
+      <text class='fos_name'>患者评论</text>
+    </view>
+
+    <block wx:for="{{comment}}" wx:for-item="k">
+    <view class='user_item_two'>
+      <view class='user'>
+        <image src='/detail/icon/yonghu.png'></image>
+        <text class='username'>{{k.username}}</text>
+        <view class='van-rate'>
+          <van-rate custom-class="van-width" color="rgba(249,168,73,1)" readonly size="{{ 10 }}" value="{{ k.value }}" bind:change="onChange" />
+        </view>
+      </view>
+      <view class='user_text'>
+        <text class='text_content'>{{k.comment}}</text>
+      </view>
+      <view class='msg'>
+        <text class='dmy'>{{k.dmy}}</text>
+        <text class='time'>{{k.time}}</text>
+        <text class='look_num'>浏览：{{k.look_num}}</text>
+      </view>
+      </view>
+    </block>
+    <view class='more mt'>
+      <text wx:if="{{comment.length == 2}}" bindtap='toCmtList'>查看更多</text>
+      <text wx:elif="{{comment.length == 0}}">暂无记录</text>
+      <image src='/detail/icon/xiangyou.png' wx:if="{{comment.length == 2}}"></image>
+    </view>
+  </view>
+</view>
+<toask msg="{{msg}}"/>

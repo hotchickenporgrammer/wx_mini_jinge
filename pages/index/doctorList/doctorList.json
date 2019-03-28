@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search": "/component/search/search",
+    "listItem": "/component/dot_item/dot_item"
+  },
+  "navigationBarTitleText": "名医推荐"
+}

@@ -1,0 +1,78 @@
+/* pages/profile/profile.wxss */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 270rpx;
+  justify-content: center;
+}
+
+.userinfo-avatar image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  font-size: 34rpx;
+  font-family: MicrosoftYaHei;
+  color: rgba(255, 255, 255, 1);
+  line-height: 11rpx;
+}
+
+.userContent {
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.userBg {
+  width: 100%;
+  height: 100%;
+}
+
+.content{
+  box-sizing: border-box;
+  padding: 0 21rpx;
+  width: 100%;
+  /* background: pink; */
+}
+.file_item {
+  /* height: 37rpx; */
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(102,102,102,1);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 34rpx 0;
+  position: relative;
+}
+.file_item .redPoint{
+  position: absolute;
+  top: 16rpx;
+  left: 26rpx;
+  display: inline-block;
+  height: 24rpx;
+  width: 24rpx;
+  background: red;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18rpx;
+  text-align: center;
+
+  }
+.file_item .item_icon{
+  height: 37rpx;
+  width: 37rpx;
+}
+.file_item .item_text{
+  padding-left: 20rpx;
+  
+}
+.file_item .dire{
+  height: 22rpx;
+  width: 22rpx;
+  margin-left: auto;
+}

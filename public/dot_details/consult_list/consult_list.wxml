@@ -1,0 +1,22 @@
+<!--public/dot_details/consult_list/consult_list.wxml-->
+<view class='content'>
+  <view class='fos_dtr'>
+    <text class='fos_name'>咨询记录</text>
+  </view>
+  <block wx:for="{{record}}" wx:for-item="j">
+    <view bindtap='toAskDetail' class='list_item' data-id='{{j.id}}'>
+      <view class='user'>
+        <image src='/detail/icon/yonghu.png'></image>
+        <text class='username'>{{j.username}}</text>
+      </view>
+      <view class='user_text'>
+        <text class='text_content'>{{j.comment}}</text>
+      </view>
+      <view class='msg'>
+        <text class='dmy'>{{j.dmy}}</text>
+        <text class='time'>{{j.time}}</text>
+        <text class='look_num'>浏览：{{j.look_num}}</text>
+      </view>
+    </view>
+  </block>
+  </view>

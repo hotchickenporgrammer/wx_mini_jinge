@@ -1,0 +1,48 @@
+/* pages/profile/comsume/comsume.wxss */
+
+.container{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.list_item{
+  padding: 40rpx 0;
+  height: 110rpx;
+}
+.list_item image{
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 50%;
+  float: left;
+  margin-top: 10rpx;
+}
+.dot_name{
+  font-size:30rpx;
+  font-family:MicrosoftYaHei;
+}
+.cost{
+  font-size:22rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(153,153,153,1);
+  padding:5rpx 0;
+}
+.time_info{
+  /* padding-top: 5rpx; */
+  font-size:22rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(153,153,153,1);
+}
+.time{
+  padding-left: 20rpx;
+}
+.left{
+  float: left;
+  padding-left: 20rpx;
+}
+.right{
+  line-height: 100rpx;
+  float: right;
+  height: 100rpx;
+  font-size:30rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(209,48,48,1);
+}

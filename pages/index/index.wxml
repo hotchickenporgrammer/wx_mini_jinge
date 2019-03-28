@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container">
+  <search />
+  <view>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{movies}}" wx:for-index="i" wx:key="id">
+        <swiper-item>
+          <navigator url='{{item.link}}'>
+            <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- <van-dialog
+  id="van-dialog"
+  show="{{!canIUse}}"
+  show-cancel-button
+  confirm-button-open-type="getUserInfo"
+  bind:getuserinfo="userinfo"
+/> -->
+  <van-popup show="{{modelShow}}" bind:close="onClose" custom-style="height:425rpx; width: 600rpx; border-radius: 10px;">
+    <view class='warning'>用户未授权</view>
+      <view class='warning_text'>您需要先允许【用户授权】才可以使用哦</view>
+    <view class='yorn'>
+      <button class='no' bindtap='isshow'>取消</button>
+      <button class='yes' bindtap='isshow' open-type="getUserInfo" bindgetuserinfo="userinfo">去授权</button>
+    </view>
+  </van-popup>
+  <!-- <button
+  wx:if="{{!canIUse}}"
+  open-type="getUserInfo"
+  bindgetuserinfo="userinfo"
+>权登录
+</button> -->
+  <view class="show">
+    <view class='fos_dtr' bindtap='toDotList'>
+      <text class='fos_name'>名医推荐</text>
+      <view>更多
+        <image src='/detail/icon/xiangyou.png' mode='scaleToFill'></image>
+      </view>
+    </view>
+    <view class="select_box">
+      <view class='wrapper'>
+        <view class="nav_select">
+          <text class="select_item {{currentTab==index?'selected':''}}" wx:for="{{likes}}" wx:key bindtap='selected_tap' data-index='{{index}}' data-current='{{index}}'>
+            {{item.title}}
+          </text>
+        </view>
+      </view>
+      <view class="selected_view {{currentTab==index?'isshow':''}}" current='{{currentTab}}' wx:for="{{likes}}" wx:key>
+        <listItem dot_item="{{item.dot_info}}" />
+      </view>
+    </view>
+    <view class='fos_dtr' bindtap='toHot'>
+      <text class='fos_name'>热门咨询</text>
+      <view>更多
+        <image src='/detail/icon/xiangyou.png' mode='scaleToFill'></image>
+      </view>
+    </view>
+    <view class="select_box">
+      <view class='wrapper'>
+        <view class="nav_select">
+          <text class="select_item {{ctab==index?'selected':''}}" wx:for="{{hot}}" wx:key bindtap='ctab' wx:for-item="h" data-index='{{index}}' data-current='{{index}}'>
+            {{h.disease}}
+          </text>
+        </view>
+      </view>
+      <view class="selected_view {{ctab==index?'isshowtwo':''}}" current='{{ctab}}' wx:for="{{hot}}" wx:key wx:for-item="t">
+        <dot_text dot_text="{{t.dot_text}}"  />
+      </view>
+    </view>
+  </view>
+</view>
+<van-tabbar active="{{ active }}" bind:change="onChange" active-color="#0F1B43">
+  <van-tabbar-item>
+    <image slot="icon" src="{{ icon.normalone }}" mode="aspectFit" />
+    <image slot="icon-active" src="{{ icon.activeone }}" mode="aspectFit" /> 健康咨询
+  </van-tabbar-item>
+  <van-tabbar-item active-color="#0F1B43" bindtap="toHot">
+    <image slot="icon" src="{{ icon.normaltwo }}" mode="aspectFit" />
+    <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activetwo }}" mode="aspectFit" /> 热门咨讯
+  </van-tabbar-item>
+  <van-tabbar-item active-color="#0F1B43" bindtap="toprofile" info="{{value}}">
+    <image slot="icon" src="{{ icon.normalthree }}" mode="aspectFit" />
+    <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activethree }}" mode="aspectFit" /> 个人中心
+  </van-tabbar-item>
+</van-tabbar>

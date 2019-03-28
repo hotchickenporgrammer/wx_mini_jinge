@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dot_text": "/component/consult/consult"
+  },
+  "navigationBarTitleText": "文章详情"
+}

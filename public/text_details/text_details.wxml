@@ -1,0 +1,15 @@
+<!--public/text_details/text_details.wxml-->
+<view class='show'>
+  <dot_text dot_text="{{dot_text}}" class="comPad"/>
+  <view class='yo'></view>
+  <view class='content'>
+    <view class='beg'>
+      <import src="/utils/wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>      
+      <!-- {{dot_text[0].text_content}} -->
+    </view> 
+    <view class='footer'>
+      END
+    </view>
+  </view>
+</view>
