@@ -1,11 +1,13 @@
 // public/eval/eval.js
+const app = getApp(),
+  core = app.requirejs("core");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    value: 4
+    value: 0
   },
 
   /**
@@ -20,7 +22,10 @@ Page({
   },
 
   onLoad: function (options) {
-
+    this.setData({
+      orderid:options.id
+    })
+    this.getOrderDot()
   },
 
   /**
@@ -70,5 +75,33 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getOrderDot:function(){
+    var that = this
+    core.get("jinge.order.doctor", {
+      orderid:that.data.orderid
+    }, function (res) {
+      that.setData({
+        doctor:res.doctor
+      })
+    })
+  },
+  contentChange:function(e){
+    this.setData({
+      content:e.detail.value
+    })
+  },
+  addComment:function(){
+    var that = this
+    core.get("jinge.order.comment", {
+      orderid: that.data.orderid,
+      doctormid: that.data.doctor.mid,
+      value:that.data.value,
+      content: that.data.content
+    }, function (res) {
+      wx.navigateTo({
+        url: '/pages/profile/myorder/myorder'
+      })
+    })
   }
 })

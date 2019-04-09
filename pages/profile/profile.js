@@ -9,7 +9,8 @@ Page({
    */
   data: {
     active: 2,
-    msgnum:0,
+    modelShow: false,
+    msgnum:'',
     icon: {
       normalone: '/detail/icon/zixunhui.png',
       activeone: '/detail/icon/zixun.png',
@@ -60,8 +61,49 @@ Page({
       url: './mymsg/mymsg',
     })
   },
+  isshow: function () {
+    this.setData({
+      modelShow: false
+    })
+  },
+  phoneinfo: function (options) {
 
-  
+    var that = this,
+      iv = options.detail.iv,
+      encryptedData = options.detail.encryptedData;
+    wx.login({
+
+      success: function (result) {
+        wx.showLoading({
+          title: '加载中',
+          mask: true
+        })
+        
+        if (result.code) {
+          core.get('wxapp/login', {
+            code: result.code
+          }, function (res) {
+            if (res.error == 0) {
+              wx.hideLoading();
+              core.get('wxapp/bindPhone', {
+                data: encryptedData,
+                iv: iv,
+                sessionKey: res.session_key
+              }, function (lastresult) {
+                console.log(lastresult);
+                if (lastresult.error == 0) {
+                  wx.hideLoading();
+                  that.setData({
+                    "member.needbind": 0
+                  })
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -121,6 +163,11 @@ Page({
         info:res.info,
         msgnum:res.value
       })
+      if(that.data.info.mobile==''){
+        that.setData({
+          modelShow: true
+        })
+      }
     })
   }
 })

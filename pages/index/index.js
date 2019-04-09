@@ -14,7 +14,7 @@ Page({
     value: '',
     currentTab: 0,
     ctab:0,
-    active: 0,
+    msgnum: '',
     icon: {
       normalone: '/detail/icon/zixunhui.png',
       activeone: '/detail/icon/zixun.png',

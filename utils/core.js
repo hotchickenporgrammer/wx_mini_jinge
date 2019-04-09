@@ -79,7 +79,8 @@ module.exports = {
     void 0 !== t && "" != t || (t = "加载中"), wx.showToast({
       title: t,
       icon: "loading",
-      duration: 5e6
+      duration: 5e6,
+      mask:true
     });
   },
   hideLoading: function () {

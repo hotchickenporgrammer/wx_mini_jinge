@@ -16,7 +16,7 @@
         </view>
         <view class='leftMsg' wx:if="{{item.contentType=='text'}}">{{item.content}}</view>
         <image src='{{item.content}}' mode='aspectFit' class='msg_img' wx:if="{{item.contentType=='image'}}"></image>
-        <view wx:if="{{item.contentType=='voice'}}" class='msg_voice_left'>{{item.time_num}}
+        <view wx:if="{{item.contentType=='voice'}}" class='msg_voice_left' bindtap='playvoice' data-path='{{item.content}}'>{{item.time_num}}
           <image src='/detail/icon/bofan.png'></image>
         </view>
       </view>
@@ -40,7 +40,7 @@
     <!-- </view> -->
 
     <!-- 占位 -->
-    <view style='width: 100%; height: 18vw;'></view>
+    <view style='width: 100%; height: 18vw;' id="chat-end"></view>
   </scroll-view>
 
   <view class='inputRoom {{btmshow?"on":""}}' style='bottom: {{inputBottom}}'>

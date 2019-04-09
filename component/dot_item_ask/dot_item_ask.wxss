@@ -103,9 +103,11 @@ page{
   position: relative;
 }
 .info_opt text{
+  text-align: right;
   position: absolute;
   top: 0;
   right: 0;
+  width: 150rpx;
   font-size:26rpx;
   font-family:MicrosoftYaHei;
   font-weight:bold;

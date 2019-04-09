@@ -1,6 +1,8 @@
 <!--pages/profile/mymsg/mymsg.wxml-->
 <view class='container'>
-  <view class='desc' wx:for="{{msg}}" wx:key bindtap='jump' data-id="{{item.orderid}}"> 
+  <view class='nodata' wx:if="{{msg.length==0}}">暂无数据</view>
+
+  <view class='desc' wx:for="{{msg}}" wx:key bindtap='jump' data-id="{{item.tomid}}"> 
     <image src='{{item.avatar}}'></image>
     <view class='info'>
       <view class='info_top'>

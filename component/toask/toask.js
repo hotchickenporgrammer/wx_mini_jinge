@@ -49,33 +49,44 @@ Component({
 
     topay: function () {
       var id = this.data.msg.options.goodsId
+      wx.showLoading({
+        title: '加载中',
+        mask: true
+      })
       core.get("jinge.order.create", { 'id': id }, function (res) {
-        if(res.price == 0){
-          wx.navigateTo({
-            url: "/public/chat/chat?id=" + res.orderid
-          })
+        wx.hideLoading();
+        if (res.error == 1){
+          core.alert(res.message)
+          return 
         }
-        else{
-          core.get("jinge.pay", { 'id': res.orderid }, function (data) {
-            var result = data.wechat.payinfo;
-            wx.requestPayment({
-              'timeStamp': result.timeStamp,
-              'nonceStr': result.nonceStr,
-              'package': result.package,
-              'signType': 'MD5',
-              'paySign': result.paySign,
-              'success': function () {
-                core.get("jinge.pay.complete", { 'id': res.orderid,'type': 'wechat' }, function () {
-                  wx.navigateTo({
-                    url: "/public/chat/chat?id=" + res.orderid
-                  })
-                })
-              },
-              'fail': function () {
-                core.alert('支付失败！');
-              }
+        else {
+          if (res.price == 0) {
+            wx.navigateTo({
+              url: "/public/chat/chat?id=" + res.tomid
             })
-          })
+          }
+          else {
+            core.get("jinge.pay", { 'id': res.orderid }, function (data) {
+              var result = data.wechat.payinfo;
+              wx.requestPayment({
+                'timeStamp': result.timeStamp,
+                'nonceStr': result.nonceStr,
+                'package': result.package,
+                'signType': 'MD5',
+                'paySign': result.paySign,
+                'success': function () {
+                  core.get("jinge.pay.complete", { 'id': res.orderid, 'type': 'wechat' }, function () {
+                    wx.navigateTo({
+                      url: "/public/chat/chat?id=" + res.tomid
+                    })
+                  })
+                },
+                'fail': function () {
+                  core.alert('支付失败！');
+                }
+              })
+            })
+          }
         }
       })
     },

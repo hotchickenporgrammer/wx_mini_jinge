@@ -2,11 +2,12 @@
 <view class='container'>
   <view class='search'>
     <view class='select' catchtap='isshow'>{{showname}}
+      <van-icon name="arrow-down" custom-class="vanIcon" />
       <view class='select_nav' wx:if="{{show}}" wx:for="{{nav_item}}" wx:for-item="n">
-        <view class='item_nav' catchtap='tabname'>{{n.select}}</view>
+        <view class='item_nav' catchtap='tabname' data-name="{{n.select}}">{{n.select}}</view>
       </view>
     </view>
-    <input type='search' placeholder='请输入' class='search_input' bindinput='inputeidt'></input>
-    <button class='btn' bindtap='toresults'>搜索</button>
+    <input type='text' bindconfirm='toresults' confirm-type="search" placeholder='请输入' class='search_input' bindinput='inputeidt'placeholder-style="color:#ccc; font-size:28rpx;"></input>
+    <!-- <button class='btn' >搜索</button> -->
   </view>
 </view>

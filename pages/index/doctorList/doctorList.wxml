@@ -10,11 +10,12 @@
     </view>
     <view class="selectbox {{currentTab==index?'':'noshow'}}" wx:for="{{select}}" wx:key wx:for-item="a" wx:if="{{isshow}}" data-index='{{index}}'>
       <view wx:for="{{a.select_item}}" wx:for-item="b" class='item' bindtap='tabName' data-value="{{b.value}}" data-type="{{b.type}}">
-        <view>{{b.name}}</view>
+        <view data-name="{{b.name}}">{{b.name}}</view>
       </view>
     </view>
   </view>
   <view class='show'>
-    <listItem dot_item="{{dot_info}}" bindtap='toDetails' />
+    <view class='nodata' wx:if="{{dot_info.length==0}}">暂无数据</view>
+    <listItem dot_item="{{dot_info}}"/>
   </view>
 </view>

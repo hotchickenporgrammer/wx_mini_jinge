@@ -20,7 +20,7 @@ function initData(that) {
     speaker: 'server',
     contentType: 'text',
     content: '医生回复不作为处方依据，由此产生的一切法律后果与本平台无关。'
-  }]
+  }, ]
   that.setData({
     msgList,
     inputVal
@@ -54,7 +54,7 @@ Page({
     "backgroundthree": '/detail/icon/luyinji.png',
     startTime: 0, //点击开始时间
     endTime: 0,
-
+    getChat:null
   },
 
   /**
@@ -62,9 +62,9 @@ Page({
    */
   onLoad: function(options) {
     initData(this);
-    var orderid = options.id
+    var did = options.id
     this.setData(({
-      orderid: orderid
+      did: did
     }))
     this.getAvatar()
     this.getChat()
@@ -74,7 +74,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.data.getChat = setInterval(() => {
+      this.getNewChat()
+    }, 5000)
   },
 
   /**
@@ -83,7 +85,12 @@ Page({
   onPullDownRefresh: function() {
 
   },
+  onHide:function(){
 
+  },
+  onUnload(){
+    clearInterval(this.data.getChat)
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -144,7 +151,7 @@ Page({
   chooseImg: function() {
     var that = this;
     core.upload(res => {
-      that.user1add('image', res.url,0)
+      that.user1add('image', res.url, 0)
       that.data.msgList.push({
         speaker: 'customer',
         contentType: 'image',
@@ -164,7 +171,7 @@ Page({
     if (e.detail.value == "" || this.data.iptValue == "") {
       return
     } else {
-      this.user1add('text', this.data.iptValue,0)
+      this.user1add('text', this.data.iptValue, 0)
       msgList.push({
         speaker: 'customer',
         contentType: 'text',
@@ -197,7 +204,9 @@ Page({
       format: 'mp3', //音频格式，有效值 aac/mp3
       frameSize: 50, //指定帧大小，单位 KB
     }
-    timer = setInterval(()=>{time_num++},1000)
+    timer = setInterval(() => {
+      time_num++
+    }, 1000)
     //开始录音
     recorderManager.start(options);
     recorderManager.onStart(() => {
@@ -208,7 +217,7 @@ Page({
       wx.showToast({
         title: '录音中',
         icon: 'loading',
-        duration:60000,
+        duration: 60000,
         mask: false,
       })
     });
@@ -220,7 +229,7 @@ Page({
 
 
   //停止录音
-  stopvoice: function () {
+  stopvoice: function() {
     var that = this
     recorderManager.stop();
     recorderManager.onStop((res) => {
@@ -235,16 +244,17 @@ Page({
       wx.hideToast()
       wx.showModal({
         title: '是否发送录音',
-        success(res){
-          if(res.confirm){
+        success(res) {
+          if (res.confirm) {
             var o = core.getUrl("util/uploader/uploadmp3", {
-              file: "file"
-            }), i = that.data.tempFilePath;
+                file: "file"
+              }),
+              i = that.data.tempFilePath;
             wx.uploadFile({
               url: o,
               filePath: i,
               name: "file",
-              success: function (n) {
+              success: function(n) {
                 var o = JSON.parse(n.data);
                 that.user1add('voice', o.files[0].url, time_num)
                 msgList.push({
@@ -271,7 +281,7 @@ Page({
             //   // time_num
             // })
             // time_num = 0
-          } else if (res.cancel){
+          } else if (res.cancel) {
             time_num = 0
           }
         },
@@ -281,7 +291,7 @@ Page({
     })
   },
 
-  playvoice:function(e){
+  playvoice: function(e) {
     var url = e.currentTarget.dataset.path
     innerAudioContext.autoplay = true
     innerAudioContext.src = url
@@ -305,8 +315,11 @@ Page({
   getAvatar: function() {
     var that = this
     core.get("jinge.chat.getavatar", {
-      'orderid': this.data.orderid
+      'did': this.data.did
     }, function(res) {
+      wx.setNavigationBarTitle({
+        title: res.realname
+      })
       that.setData({
         dot_img: res.dot_img,
         cusHeadIcon: res.cusHeadIcon
@@ -317,24 +330,53 @@ Page({
     var that = this
     var msgList = this.data.msgList;
     core.get("jinge.chat", {
-      'orderid': this.data.orderid
+      'did': this.data.did
     }, function(res) {
+      if(res.check == 0){
+        core.alert('您与该医生的新订单还未支付，请先去支付再咨询')
+        wx.redirectTo({
+          url: '/pages/profile/profile',
+        })
+      }
+      else if (res.check != 1){
+        core.alert('您与该医生的订单已结束，如需再次咨询请重新下单')
+        wx.redirectTo({
+          url: '/pages/profile/profile',
+        })
+      }
       res.msgList.forEach(item => {
         msgList.push(item)
       })
-      // console.log(msgList)
       that.setData({
-        msgList: msgList
+        msgList: msgList,
+        toView:"chat-end"
       })
     })
   },
-  user1add: function(type, content,time_num) {
+  user1add: function(type, content, time_num) {
     var that = this
     core.get("jinge.chat.post", {
-      'orderid': this.data.orderid,
+      'did': this.data.did,
       'type': type,
       'content': content,
       'time_num': time_num
     }, function(res) {})
+  },
+  getNewChat:function(){
+    var that = this
+    core.get("jinge.chat.newchat", {
+      'did': this.data.did,
+      'len': this.data.msgList.length
+    },function(res){
+      console.log(res)
+      if(res.list.length != 0){
+        res.list.forEach(item => {
+          msgList.push(item)
+        })
+        that.setData({
+          msgList: msgList
+        })
+      }
+    })
   }
 })

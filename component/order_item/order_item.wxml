@@ -1,9 +1,9 @@
 <!--component/order_item/order_item.wxml-->
 <view class='content' wx:for="{{service_content}}" wx:key >
   <view class="desc">
-    <navigator url='./order_detail/order_detail'>
+    <navigator url='./order_detail/order_detail?id={{item.id}}'>
       <view class='dot_info clearfix'>
-        <image class='left' src='/detail/img/dot.png'></image>
+        <image class='left' src='{{item.thumbs}}'></image>
         <view class='right'>
           <view class='info_top'>
             <text class='name'>{{item.dot_name}}</text>
@@ -22,11 +22,14 @@
         </view>
         <view class='content_text'>{{item.text}}</view>
       </view>
-    </navigator>
+    </navigator> 
     <view class='money'>合计：￥{{item.money}}</view>
     <view class='btn_group'>
+      <!-- <slot bindtap="showpop"></slot> -->
+      <button class='foo' wx:if="{{item.btn_three != ''}}" data-id="{{item.id}}" data-tomid="{{item.mid}}" bindtap='topay'>{{item.btn_three}}</button>
+      <button class='foo' wx:if="{{item.btn_four != ''}}" data-id="{{item.id}}" data-tomid="{{item.mid}}" bindtap='deleteorder'>{{item.btn_four}}</button>
       <button class='oneMore' bindtap='showpop' wx:if="{{item.btn_one == '申请退款' && item.money != 0}}" data-id='{{item.id}}'>{{item.btn_one}}</button>
-      <navigator url='/public/eval/eval' wx:if="{{item.btn_two == '评价服务'}}">
+      <navigator url='/public/eval/eval?id={{item.id}}' wx:if="{{item.btn_two == '评价服务'}}">
         <button class='eval'>{{item.btn_two}}</button>
       </navigator>
     </view>

@@ -62,6 +62,46 @@ Component({
           content: '',
           show: false
         })
+        wx.redirectTo({
+          url: '/pages/profile/myorder/myorder',
+        })
+      })
+    },
+    topay:function(e){
+      var id = e.currentTarget.dataset.id
+      var tomid = e.currentTarget.dataset.tomid
+      wx.showLoading({
+        title: '加载中',
+        mask: true
+      })
+      core.get("jinge.pay", { 'id': id }, function (data) {
+        wx.hideLoading();
+        var result = data.wechat.payinfo;
+        wx.requestPayment({
+          'timeStamp': result.timeStamp,
+          'nonceStr': result.nonceStr,
+          'package': result.package,
+          'signType': 'MD5',
+          'paySign': result.paySign,
+          'success': function () {
+            core.get("jinge.pay.complete", { 'id': id, 'type': 'wechat' }, function () {
+              wx.navigateTo({
+                url: "/public/chat/chat?id=" + tomid
+              })
+            })
+          },
+          'fail': function () {
+            core.alert('支付失败！');
+          }
+        })
+      })
+    },
+    deleteorder:function(e){
+      var id = e.currentTarget.dataset.id
+      core.get("jinge.order.deleteorder", { 'id': id }, function (res) {
+        wx.redirectTo({
+          url: '/pages/profile/myorder/myorder',
+        })
       })
     }
   }

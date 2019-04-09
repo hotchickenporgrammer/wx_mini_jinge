@@ -35,8 +35,8 @@ Page({
     })
   },
   tabname:function(e){
-    console.log('e')
-    var item_name = e._relatedInfo.anchorTargetText
+    console.log(e)
+    var item_name = e.target.dataset.name
     this.setData({
       show: !this.data.show,
       showname: item_name

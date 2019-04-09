@@ -2,7 +2,7 @@
 <view class="container">
   <search />
   <view>
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color='#fff'>
       <block wx:for="{{movies}}" wx:for-index="i" wx:key="id">
         <swiper-item>
           <navigator url='{{item.link}}'>
@@ -33,14 +33,17 @@
   bindgetuserinfo="userinfo"
 >权登录
 </button> -->
-  <view class="show">
+  <view>
+  <view class='show'>
     <view class='fos_dtr' bindtap='toDotList'>
       <text class='fos_name'>名医推荐</text>
       <view>更多
         <image src='/detail/icon/xiangyou.png' mode='scaleToFill'></image>
       </view>
     </view>
+    </view>
     <view class="select_box">
+    <view class='show'>
       <view class='wrapper'>
         <view class="nav_select">
           <text class="select_item {{currentTab==index?'selected':''}}" wx:for="{{likes}}" wx:key bindtap='selected_tap' data-index='{{index}}' data-current='{{index}}'>
@@ -50,15 +53,18 @@
       </view>
       <view class="selected_view {{currentTab==index?'isshow':''}}" current='{{currentTab}}' wx:for="{{likes}}" wx:key>
         <listItem dot_item="{{item.dot_info}}" />
+        <view wx:if="{{item.dot_info.length==0}}" class='nojilu'>暂无推荐</view>
+      </view>
       </view>
     </view>
+    <view class='show pb'>
     <view class='fos_dtr' bindtap='toHot'>
       <text class='fos_name'>热门咨询</text>
       <view>更多
         <image src='/detail/icon/xiangyou.png' mode='scaleToFill'></image>
       </view>
     </view>
-    <view class="select_box">
+    <view class="select_box box2">
       <view class='wrapper'>
         <view class="nav_select">
           <text class="select_item {{ctab==index?'selected':''}}" wx:for="{{hot}}" wx:key bindtap='ctab' wx:for-item="h" data-index='{{index}}' data-current='{{index}}'>
@@ -68,7 +74,9 @@
       </view>
       <view class="selected_view {{ctab==index?'isshowtwo':''}}" current='{{ctab}}' wx:for="{{hot}}" wx:key wx:for-item="t">
         <dot_text dot_text="{{t.dot_text}}"  />
+        <view wx:if="{{t.dot_text.length==0}}" class='nojilu'>暂无推荐</view>
       </view>
+    </view>
     </view>
   </view>
 </view>
@@ -81,7 +89,7 @@
     <image slot="icon" src="{{ icon.normaltwo }}" mode="aspectFit" />
     <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activetwo }}" mode="aspectFit" /> 热门咨讯
   </van-tabbar-item>
-  <van-tabbar-item active-color="#0F1B43" bindtap="toprofile" info="{{value}}">
+  <van-tabbar-item active-color="#0F1B43" bindtap="toprofile" info="{{msgnum}}">
     <image slot="icon" src="{{ icon.normalthree }}" mode="aspectFit" />
     <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activethree }}" mode="aspectFit" /> 个人中心
   </van-tabbar-item>

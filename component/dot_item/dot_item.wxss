@@ -45,7 +45,11 @@
 
 .list_item{
   height: 180rpx;
-  padding: 40rpx 0;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.list_item:last-child{
+  border-bottom: none;
 }
 .left{
   height: 100%;
@@ -109,6 +113,7 @@
   padding: 5rpx 0;
   border:1px solid rgba(161,182,199,1);
   border-radius:19rpx;
+  margin-top: 5rpx;
   }
  .dot_info .consulted{
     font-size:22rpx;
@@ -120,7 +125,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding-top: 13rpx;
+    padding-top: 17rpx;
     font-size:22rpx;
     font-family:MicrosoftYaHei;
     color:rgba(153,153,153,1);
@@ -131,10 +136,12 @@
   position: relative;
 }
 .info_opt text{
+  text-align: right;
   position: absolute;
   top: 0;
   right: 0;
   font-size:24rpx;
+  width: 140rpx;
   font-family:MicrosoftYaHei;
   font-weight:400;
   color:rgba(209,48,48,1);

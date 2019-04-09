@@ -1,4 +1,6 @@
 <!--pages/profile/consul_user/consul_user.wxml-->
 <view class='container'>
-<dot_item dot_item="{{dot_info}}"/>
+  <dot_item dot_item="{{dot_info}}"/>
+  <view class='nodata' wx:if="{{dot_info==false}}">暂无数据</view>
+
 </view>

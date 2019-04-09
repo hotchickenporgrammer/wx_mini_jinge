@@ -41,7 +41,7 @@
   padding-bottom: 70rpx;
 }
 .content_scroll{
-  height: 800rpx;
+  height: 550rpx;
   overflow: auto;
 
 }
@@ -77,12 +77,13 @@
   display: inline-block;
   height: 71rpx;
   width: 242rpx;
-  border-radius:8px;
+  /* border-radius:16rpx; */
   line-height: 71rpx;
   font-size: 24rpx;
+  box-sizing: border-box;
 }
 .btn_group .no{
-  border:1px solid #ddd;
+  border:1rpx solid #ddd;
 }
 .btn_group .yes{
   color: #fff;

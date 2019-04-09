@@ -1,5 +1,6 @@
 <!--pages/profile/comsume/comsume.wxml-->
 <view class='container'>
+    <view class='nodata' wx:if="{{comsume.length==0}}">暂无数据</view>
   <block wx:for="{{comsume}}" wx:for-item="i">
     <view class='list_item'>
       <image src='{{i.thumbs}}'></image>

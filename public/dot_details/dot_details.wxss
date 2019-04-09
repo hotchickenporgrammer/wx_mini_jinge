@@ -103,11 +103,11 @@ page{
   border-bottom: 1rpx solid #eee;
 
 }
-.user_item:nth-child(3),
+/* .user_item:nth-child(3),
 .user_item_two:nth-child(3){
   border-bottom: none;
 
-}
+} */
 
 .msg text{
 font-size:24rpx;
@@ -122,7 +122,7 @@ color:rgba(153,153,153,1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15rpx 0 10rpx 0;
+  padding: 30rpx 0 10rpx 0;
   /* margin-bottom: 120rpx; */
   /* padding: 15rpx 0; */
 }

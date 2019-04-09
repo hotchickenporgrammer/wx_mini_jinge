@@ -34,6 +34,8 @@ Component({
       wx.navigateTo({
         url: "../../public/text_details/text_details?goodsId=" + goodsId,
       })
+      return false
     },
+    
   }
 })

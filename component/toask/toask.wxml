@@ -7,20 +7,22 @@
   <view class='agr'>
     <view class='agr_title'>
       咨询说明及相关协议条款
-    </view> 
+    </view>
     <view class='content_scroll'>
-    <view class='scroll'>
-      <text class='agr_content'>{{agr_content}}</text>  
+      <view class='scroll'>
+        <text class='agr_content'>{{agr_content}}</text>
+      </view>
+    </view>
+    <view class='bt'>
       <view class='yorn'>
         <checkbox checked='{{ischeck}}' bindtap='onischeck'>您已阅读并同意</checkbox>
-        <navigator url="/component/toask/terms/terms" class="read" bindtap='toTerms'>咨询说明及相关协议条款
-        </navigator>
+        <view url="/component/toask/terms/terms" class="read" bindtap='toTerms'>咨询说明及相关协议条款
+        </view>
       </view>
       <view class='btn_group'>
         <button class="no" bindtap='noShow'>取消</button>
         <button class='yes' disabled='{{!ischeck}}' bindtap='topay'>确认</button>
       </view>
-    </view> 
     </view>
   </view>
 </van-popup>

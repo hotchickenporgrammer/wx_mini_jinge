@@ -1,8 +1,14 @@
 /* component/consult/consult.wxss */
 
 .list_item{
-  height: 140rpx;
+  /* height: 140rpx; */
   padding: 40rpx 0;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+.list_item:last-child{
+border: none;
 }
 
 .article_title{
@@ -20,27 +26,32 @@
   /* word-break: keep-all;
   word-wrap: break-word; */
   color:rgba(102,102,102,1);
+  padding-bottom: 20rpx;
+}
+.bt{
+  display: flex;
+  justify-content: space-between;
 }
 .local_class{
-  height: 140rpx;
-  position: relative;
+  /* height: 140rpx; */
+  /* position: relative; */
 }
 .art_time{
   font-size:24rpx;
   font-family:MicrosoftYaHei;
   font-weight:400;
   color:rgba(153,153,153,1);
-  position: absolute;
-  left: 0;
-  bottom: 24rpx;
+  /* position: absolute; */
+  /* left: 0;
+  bottom: 24rpx; */
 }
 .look_num{
-  position: absolute;
+  /* position: absolute; */
   font-size:24rpx;
   font-family:MicrosoftYaHei;
   font-weight:400;
   color:rgba(153,153,153,1);
-  right: 0;
-  bottom: 24rpx;
+  /* right: 0;
+  bottom: 24rpx; */
 
 }

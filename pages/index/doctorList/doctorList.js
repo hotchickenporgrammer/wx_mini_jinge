@@ -26,16 +26,11 @@ Page({
     }
     this.getDot_info();
   },
-  toDetails: function () {
-    wx.navigateTo({
-      url: "../../../public/dot_details/dot_details",
-    })
-  },
-
   tabName: function (e) {
-    
+    console.log(e)
     var index = this.data.currentTab
     var name = "select[" + index + "].itemname"
+    var itemname = e.target.dataset.name
     if (e.currentTarget.dataset.type == "order"){
       this.setData({
         order_id: e.currentTarget.dataset.value
@@ -53,7 +48,7 @@ Page({
     }
     this.setData({
  
-      [name]: e._relatedInfo.anchorTargetText,
+      [name]: itemname,
       isshow: !this.data.isshow
     })
     console.log(e)

@@ -1,7 +1,8 @@
 {
   "usingComponents": {
         "van-tabbar": "/dist/tabbar/index",
-        "van-tabbar-item": "/dist/tabbar-item/index"
+        "van-tabbar-item": "/dist/tabbar-item/index",
+        "van-popup": "/dist/popup/index"
   },
   "navigationBarTitleText": "个人中心"
 }

@@ -10,7 +10,8 @@
     </view>
   </view>
   <view class="selected_view {{currentTab==index?'isshow':''}}" current='{{currentTab}}' wx:for="{{hot}}" wx:key wx:for-item="t">
-    <dot_text dot_text="{{t.dot_text}}" bindtap="toTextDetail"/>
+    <dot_text dot_text="{{t.dot_text}}"/>
+    <view class='nodata' wx:if="{{t.dot_text.length==0}}">暂无数据</view>
   </view>
 </view>
 </view>
@@ -19,11 +20,11 @@
     <image slot="icon" src="{{ icon.normalone }}" mode="aspectFit" />
     <image slot="icon-active" src="{{ icon.activeone }}" mode="aspectFit" /> 健康咨询
   </van-tabbar-item>
-  <van-tabbar-item active-color="#0F1B43">
+  <van-tabbar-item active-color="#0F1B43" >
     <image slot="icon" src="{{ icon.normaltwo }}" mode="aspectFit" />
     <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activetwo }}" mode="aspectFit" /> 热门咨讯
   </van-tabbar-item>
-  <van-tabbar-item active-color="#0F1B43" info="{{msgnum}}" bindtap="toprofile" info="{{value}}">
+  <van-tabbar-item active-color="#0F1B43" info="{{msgnum}}" bindtap="toprofile" info="{{msgnum}}">
     <image slot="icon" src="{{ icon.normalthree }}" mode="aspectFit" />
     <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activethree }}" mode="aspectFit" /> 个人中心
   </van-tabbar-item>

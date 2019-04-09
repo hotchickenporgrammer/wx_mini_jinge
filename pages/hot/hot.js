@@ -8,9 +8,10 @@ Page({
    */
   data: {
     hot: [],
-    value:"",
+    value:'',
     currentTab: 0,
-    active: 1,
+    msgnum: '',
+    active:1,
     icon: {
       normalone: '/detail/icon/zixunhui.png',
       activeone: '/detail/icon/zixun.png',
@@ -41,12 +42,6 @@ Page({
 
   onChange:function(e){
     console.log(e)
-  },
-
-  toTextDetail:function(){
-    wx.navigateTo({
-      url: "../../public/text_details/text_details",
-    })
   },
 
   selected_tap: function (e) {

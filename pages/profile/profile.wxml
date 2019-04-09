@@ -45,3 +45,11 @@
     <image active-color="#0F1B43" slot="icon-active" src="{{ icon.activethree }}" mode="aspectFit" /> 个人中心
   </van-tabbar-item>
 </van-tabbar>
+  <van-popup show="{{modelShow}}" bind:close="onClose" custom-style="height:425rpx; width: 600rpx; border-radius: 10px;">
+    <view class='warning'>登录后。账号更安全</view>
+      <view class='warning_text'>微信一键登录，安全又方便</view>
+    <view class='yorn'>
+      <button class='no' bindtap='isshow'>取消</button>
+      <button class='yes' bindtap='isshow' openType="getPhoneNumber" bindgetphonenumber="phoneinfo">点击登录</button>
+    </view>
+</van-popup>

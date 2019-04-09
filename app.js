@@ -68,9 +68,14 @@ App({
     var o = this, a = {}, a = o.getCache("userinfo");
     wx.login({
       success: function (n) {
+        wx.showLoading({
+          title: '加载中',
+          mask:true
+        })
         n.code ? e.post("wxapp/login", {
           code: n.code
         }, function (n) {
+          wx.hideLoading();
           n.error ? e.alert("获取用户登录态失败:" + n.message) : n.isclose && i && "function" == typeof i ? i(n.closetext, !0) : wx.getUserInfo({
             success: function (i) {
               a = i.userInfo, e.get("wxapp/auth", {
@@ -182,8 +187,8 @@ App({
   },
   globalData: {
     appid: "wxe3002b245a92ae99",
-    api: "http://jinge.guangzhoubaidu.com/app/ewei_shopv2_api.php?i=202",
-    approot: "http://jinge.guangzhoubaidu.com/addons/ewei_shopv2/",
+    api: "https://jinge101.kemanduo.cc/app/ewei_shopv2_api.php?i=202",
+    approot: "https://jinge101.kemanduo.cc/addons/ewei_shopv2/",
     userInfo: "",
     foo:"bar"
   }

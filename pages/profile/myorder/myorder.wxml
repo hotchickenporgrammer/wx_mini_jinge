@@ -7,6 +7,8 @@
   </view>
   <view wx:for="{{nav}}" wx:key wx:for-item="j" class='noshow {{currentab==index?"show":""}}'>
   <order_item service_content="{{j.service_content}}">
+  <!-- <button>待付款</button> -->
   </order_item> 
+  <view class='nodata' wx:if="{{j.service_content.length==0}}">暂无数据</view>
   </view>
 </view>

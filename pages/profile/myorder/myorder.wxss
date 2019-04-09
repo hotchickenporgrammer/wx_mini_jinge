@@ -40,3 +40,9 @@ page{
   font-family:MicrosoftYaHei;
   color:rgba(204,204,204,1);
 }
+.nodata{
+  color: #ccc;
+  font-size: 26rpx;
+  text-align: center;
+  transform: translateY(200rpx);
+}

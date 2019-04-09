@@ -4,3 +4,9 @@
   box-sizing: border-box;
   padding: 0 20rpx;
 }
+.nodata{
+  color: #ccc;
+  font-size: 26rpx;
+  text-align: center;
+  transform: translateY(200rpx);
+}

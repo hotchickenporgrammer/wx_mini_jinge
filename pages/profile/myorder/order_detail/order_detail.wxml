@@ -1,17 +1,17 @@
 <!--pages/profile/myorder/order_detail/order_detail.wxml-->
 <order_item service_content="{{service_content}}">
-  <button>{{service_content[0].btn_three}}</button>
+  <!-- <button>{{service_content[0].btn_three}}</button> -->
 </order_item>
 <view class='container'>
   <view class='orderNum'>
     <text>订单号:</text>
-    <text class='num'>11111111111111111111111</text>
+    <text class='num'>{{service_content[0].order_num}}</text>
   </view>
   <view class='createTime'>
     <text>创建时间:</text>
     <text class='num'>
-      <text class='date'>{{service_content[0].date}}</text>
-      <text class='time'>{{service_content[0].time}}</text>
+      <text class='date'>{{service_content[0].order_date}}</text>
+      <text class='time'>{{service_content[0].order_time}}</text>
     </text>
   </view>
 </view>
